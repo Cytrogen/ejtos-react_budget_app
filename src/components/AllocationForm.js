@@ -41,6 +41,7 @@ const AllocationForm = (props) => {
                         <label className='input-group-text' htmlFor='inputGroupSelect01'>Department</label>
                     </div>
 
+                    {/* Choose department */}
                     <select className='custom-select' id='inputGroupSelect01' onChange={ (event) => setName(event.target.value) }>
                         <option defaultValue>Choose...</option>
                         <option value='Marketing' name='marketing'>Marketing</option>
@@ -54,13 +55,18 @@ const AllocationForm = (props) => {
                         <label className='input-group-text' htmlFor='inputGroupSelect02'>Allocation</label>
                     </div>
 
+                    {/* Choose allocation */}
                     <select className='custom-select' id='inputGroupSelect02' onChange={ (event) => setAction(event.target.value) }>
                         <option defaultValue value='Add' name='add'>Add</option>
                         <option value='Reduce' name='reduce'>Reduce</option>
                     </select>
 
-                    <input required='required' type='number' id='cost' value={ cost } style={ { marginLeft: '2rem', size: 10 } } onChange={ (event) => setCost(event.target.value) } />
+                    <div className='input-group-prepend' style={ { marginLeft: '2rem', marginRight: '0.5rem' } }>
+                        <label htmlFor='cost'>£</label>
+                    </div>
 
+                    <input required='required' type='number' id='cost' value={ cost } style={ { size: 10 } } onChange={ (event) => setCost(event.target.value) } />
+                    
                     <button className='btn btn-primary' onClick={ submitEvent } style={ { marginLeft: '2rem' } }>Save</button>
                 </div>
             </div>
